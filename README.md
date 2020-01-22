@@ -19,13 +19,11 @@ rule "TEST"
 	when
 		Item Logging_Test changed
 	then
-		val  String	cfgAccessLogTest		= "/etc/openhab2/html/KeyAccessControl_Test.txt"
-    val  String cfgTxtLoggingScript	= "/var/lib/openhab2/scripts/TxtLogging/src/TxtLogging.sh"
+		val  String cfgAccessLogTest	= "/etc/openhab2/html/KeyAccessControl_Test.txt"
+    		val  String cfgTxtLoggingScript	= "/var/lib/openhab2/scripts/TxtLogging/src/TxtLogging.sh"
 
 		executeCommandLine( "/bin/bash" +"@@" + cfgTxtLoggingScript + "@@" + "AddHeader" + "@@" + "Mi 22.01.2020" + "@@" + cfgAccessLogTest,  5000)
 
 		executeCommandLine( "/bin/bash" +"@@" + cfgTxtLoggingScript + "@@" + "AddItem" + "@@" + "05:53:29 - Event 1" + "@@" + cfgAccessLogTest,  5000)
-
-
 end
 ```
