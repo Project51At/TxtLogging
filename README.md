@@ -14,7 +14,7 @@ Di 21.01.2020
 07:52:25 - Event 3
 
 # OpenHab Rule
-
+```
 rule "TEST"
 	when
 		Item Logging_Test changed
@@ -28,3 +28,4 @@ rule "TEST"
 
 
 end
+```
